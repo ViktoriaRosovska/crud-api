@@ -1,0 +1,48 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ViktoriaRosovska/crud-api#readme",
+  "bugs": {
+    "url": "https://github.com/ViktoriaRosovska/crud-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktoriaRosovska/crud-api.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "format": "prettier --check ./src",
+    "format:fix": "prettier --write ./src",
+    "test": "jest --silent",
+    "test:verbose": "jest",
+    "build": "webpack --config webpack.config.mjs",
+    "build:dev": "webpack --config webpack/webpack.dev.mjs",
+    "start:dev": "NODE_NO_WARNINGS=1 node --loader ts-node/esm --env-file=.env src/index.ts",
+    "start:prod": "npm run build && node --env-file .env dist/index.js"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
+    "@types/uuid": "^10.0.0",
+    "dotenv-webpack": "^8.1.0",
+    "jest": "^29.7.0",
+    "prettier": "3.5.3",
+    "ts-jest": "^29.3.2",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "uuid": "^11.1.0"
+  }
+}
