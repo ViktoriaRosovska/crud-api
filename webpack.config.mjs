@@ -10,18 +10,17 @@ const __dirname = dirname(__filename);
 export default {
     target: 'node',
     externals: [nodeExternals()],
-    mode: 'production',
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js',
+        filename: 'bundle.js',
     },
     plugins: [
       new Dotenv()
     ],
     resolve: {
-        extensions: ['.ts', '.js'],
-      },
+      extensions: ['.ts', '.js']
+    },
       module: {
         rules: [
           {
@@ -31,4 +30,5 @@ export default {
           },
         ],
       },
+      mode: 'production'
 };

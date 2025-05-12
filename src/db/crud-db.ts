@@ -1,4 +1,4 @@
-import type { User }  from "../types/type.js";
+import type { User }  from "../types/type";
 
 export const crudDB: Array<User> = [
     {

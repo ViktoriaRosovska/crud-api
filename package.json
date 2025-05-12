@@ -12,20 +12,21 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "module",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "scripts": {
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
     "test": "jest --silent",
     "test:verbose": "jest",
-    "build": "webpack --config webpack.config.mjs",
-    "build:dev": "webpack --config webpack/webpack.dev.mjs",
-    "start:dev": "NODE_NO_WARNINGS=1 node --loader ts-node/esm --env-file=.env src/index.ts",
-    "start:prod": "npm run build && node --env-file .env dist/index.js"
+    "build": "webpack",
+    "build:dev": "webpack --config webpack.dev.mjs",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "start:prod": "npm run build && node --env-file .env dist/bundle.js",
+    "start:multi": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
+    "@types/http-proxy": "^1.17.16",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.17",
     "@types/uuid": "^10.0.0",
