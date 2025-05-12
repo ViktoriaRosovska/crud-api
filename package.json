@@ -22,7 +22,7 @@
     "build:dev": "webpack --config webpack.dev.mjs",
     "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "start:prod": "npm run build && node --env-file .env dist/bundle.js",
-    "start:multi": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "start:multi": "ts-node-dev --respawn --transpile-only src/cluster.ts"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",

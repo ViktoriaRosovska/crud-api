@@ -3,6 +3,12 @@ import { ServerResponse } from 'http';
 import serverHandler from '../src/serverHandler/serverHandler';
 import { Readable } from 'stream';
 import { crudDB } from '../src/db/crud-db';
+import { createServer } from 'http';
+
+
+const port = process.env.TEST_PORT || 5000;
+const server = createServer(serverHandler);
+server.listen(port);
 
 beforeEach(() => {
   crudDB.length = 0;
